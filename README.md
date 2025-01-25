@@ -1,6 +1,6 @@
 # Task-Management-Website
 ## Overview:
-This is a Task Management Website built using React and Vite. The application allows users to manage projects and tasks efficiently. Users can create projects, add tasks within those projects, mark tasks as completed, and delete completed projects. Each project can have a due date and a description to help organize and prioritize work.
+This is a Task Management Website built using **React** and **Vite**. The application allows users to manage projects and tasks efficiently. Users can create projects, add tasks within those projects, mark tasks as completed, and delete completed projects. Each project can have a due date and a description to help organize and prioritize work.
 ##Features
 
 #### Project Management
