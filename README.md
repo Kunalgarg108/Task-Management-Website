@@ -22,8 +22,8 @@ This is a Task Management Website built using **React** and **Vite**. The applic
 - Select due dates for each project using a date picker.
 - Add detailed descriptions for projects for better organization.
 
-## Installation
-Follow these steps to get the project running locally:
+## Installation:
+Follow these steps to get the project running locally
 
 ### Prerequisites
 - Node.js installed on your system
