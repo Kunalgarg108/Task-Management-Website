@@ -17,11 +17,11 @@ This is a Task Management Website built using **React** and **Vite**. The applic
 - User-friendly interface with responsive design.
 - Gradient-based color schemes and hover effects for buttons and components.
 - Smooth transitions for enhanced user experience.
-- 
+  
 #### Date and Description
 - Select due dates for each project using a date picker.
 - Add detailed descriptions for projects for better organization.
----
+
 ## Installation
 Follow these steps to get the project running locally:
 
