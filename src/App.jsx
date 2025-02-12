@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ProjectInput from "./components/ProjectInput";
 import ProjectInputPreview from "./components/ProjectInputPreview";
 import ProjectSidebar from "./components/ProjectSidebar";
@@ -28,7 +28,14 @@ function App() {
     newId: -1,
   });
 
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(() => {
+    const savedProjects = localStorage.getItem("projects");
+    return savedProjects ? JSON.parse(savedProjects) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }, [projects]);
 
   function handleAddProject(project) {
     project.id = projectId.current.newId + 1;
@@ -51,7 +58,7 @@ function App() {
     toastRef.current.open();
     setTimeout(() => {
       setProjects((prevProjects) =>
-        prevProjects.filter((project) => project.id != id)
+        prevProjects.filter((project) => project.id !== id)
       );
       setActiveView("project-preview");
       selectedProjectRef.current.activeProjectIndex = null;
@@ -70,7 +77,7 @@ function App() {
             if (index === selectedProjectRef.current.activeProjectIndex) {
               const newProject = {
                 ...project,
-                tasks: [...project.tasks, task],
+                tasks: [...project.tasks, { ...task, id: project.tasks.length }],
               };
               return newProject;
             } else {
@@ -151,7 +158,6 @@ function App() {
       {activeView === "project-preview" && null}
     </main>
   );
-  
 }
 
 export default App;
